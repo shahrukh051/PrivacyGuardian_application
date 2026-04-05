@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/bg">
+
+    <!-- ── TOP HEADER ── -->
+    <LinearLayout android:id="@+id/header"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:padding="16dp"
+        android:background="@color/bg" android:gravity="center_vertical"
+        android:elevation="4dp">
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:orientation="vertical">
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="🛡️ " android:textSize="20sp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="PRIVACY " android:textColor="@color/text1"
+                    android:textSize="17sp" android:textStyle="bold" android:fontFamily="monospace"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="GUARDIAN" android:textColor="@color/green"
+                    android:textSize="17sp" android:textStyle="bold" android:fontFamily="monospace"/>
+            </LinearLayout>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Smart Sensor Monitor v2.0" android:textColor="@color/muted"
+                android:textSize="10sp" android:fontFamily="monospace"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_scan"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_green_btn"
+            android:fontFamily="monospace"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/scan_now"
+            android:textColor="@color/green"
+            android:textSize="11sp"
+            tools:ignore="TouchTargetSizeCheck" />
+    </LinearLayout>
+
+    <ProgressBar android:id="@+id/pb_scan"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent" android:layout_height="3dp"
+        android:layout_marginTop="74dp"
+        android:progressTint="@color/green" android:indeterminate="true"
+        android:visibility="gone"/>
+
+    <!-- ── SCROLL CONTENT ── -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:layout_marginTop="80dp" android:layout_marginBottom="60dp"
+        android:padding="14dp">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- ═══════ DASHBOARD TAB ═══════ -->
+            <LinearLayout android:id="@+id/v_dashboard"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:visibility="visible">
+
+                <!-- Stat Cards Row -->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:weightSum="4" android:layout_marginBottom="12dp">
+
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical"
+                        android:padding="12dp" android:background="@drawable/bg_stat" android:layout_marginEnd="5dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="CRITICAL" android:textColor="@color/muted" android:textSize="8sp" android:fontFamily="monospace"/>
+                        <TextView android:id="@+id/tv_high" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="0" android:textColor="@color/critical" android:textSize="28sp" android:textStyle="bold" android:fontFamily="monospace"/>
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical"
+                        android:padding="12dp" android:background="@drawable/bg_stat" android:layout_marginEnd="5dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="BG ACTIVE" android:textColor="@color/muted" android:textSize="8sp" android:fontFamily="monospace"/>
+                        <TextView android:id="@+id/tv_bg" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="0" android:textColor="@color/high" android:textSize="28sp" android:textStyle="bold" android:fontFamily="monospace"/>
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical"
+                        android:padding="12dp" android:background="@drawable/bg_stat" android:layout_marginEnd="5dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="AVG RISK" android:textColor="@color/muted" android:textSize="8sp" android:fontFamily="monospace"/>
+                        <TextView android:id="@+id/tv_avg" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="0" android:textColor="@color/medium" android:textSize="28sp" android:textStyle="bold" android:fontFamily="monospace"/>
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical"
+                        android:padding="12dp" android:background="@drawable/bg_stat">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="TOTAL" android:textColor="@color/muted" android:textSize="8sp" android:fontFamily="monospace"/>
+                        <TextView android:id="@+id/tv_total" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="0" android:textColor="@color/green" android:textSize="28sp" android:textStyle="bold" android:fontFamily="monospace"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Sensor Exposure + Weekly Trend -->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="16dp"
+                    android:background="@drawable/bg_card" android:layout_marginBottom="12dp">
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="SENSOR EXPOSURE   ·   7-DAY TRENDS"
+                        android:textColor="@color/muted" android:textSize="10sp"
+                        android:fontFamily="monospace" android:layout_marginBottom="14dp"/>
+
+                    <!-- Camera -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:layout_marginBottom="12dp">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:orientation="horizontal" android:gravity="center_vertical">
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                                android:layout_weight="1" android:text="📷  CAMERA"
+                                android:textColor="@color/cam" android:textSize="12sp" android:fontFamily="monospace"/>
+                            <TextView android:id="@+id/tv_cam_count" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="0 apps" android:textColor="@color/muted" android:textSize="11sp" android:fontFamily="monospace"/>
+                        </LinearLayout>
+                        <ProgressBar android:id="@+id/pb_cam" style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent" android:layout_height="7dp"
+                            android:progressTint="@color/cam" android:max="100" android:layout_marginTop="5dp"/>
+                        <TextView android:id="@+id/tv_trend_cam" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="7-day: 0 accesses" android:textColor="@color/muted" android:textSize="10sp"
+                            android:fontFamily="monospace" android:layout_marginTop="2dp"/>
+                    </LinearLayout>
+
+                    <!-- Mic -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:layout_marginBottom="12dp">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:orientation="horizontal" android:gravity="center_vertical">
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                                android:layout_weight="1" android:text="🎙️  MICROPHONE"
+                                android:textColor="@color/mic" android:textSize="12sp" android:fontFamily="monospace"/>
+                            <TextView android:id="@+id/tv_mic_count" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="0 apps" android:textColor="@color/muted" android:textSize="11sp" android:fontFamily="monospace"/>
+                        </LinearLayout>
+                        <ProgressBar android:id="@+id/pb_mic" style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent" android:layout_height="7dp"
+                            android:progressTint="@color/mic" android:max="100" android:layout_marginTop="5dp"/>
+                        <TextView android:id="@+id/tv_trend_mic" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="7-day: 0 accesses" android:textColor="@color/muted" android:textSize="10sp"
+                            android:fontFamily="monospace" android:layout_marginTop="2dp"/>
+                    </LinearLayout>
+
+                    <!-- GPS -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:orientation="horizontal" android:gravity="center_vertical">
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                                android:layout_weight="1" android:text="📍  GPS LOCATION"
+                                android:textColor="@color/gps" android:textSize="12sp" android:fontFamily="monospace"/>
+                            <TextView android:id="@+id/tv_gps_count" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="0 apps" android:textColor="@color/muted" android:textSize="11sp" android:fontFamily="monospace"/>
+                        </LinearLayout>
+                        <ProgressBar android:id="@+id/pb_gps" style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent" android:layout_height="7dp"
+                            android:progressTint="@color/gps" android:max="100" android:layout_marginTop="5dp"/>
+                        <TextView android:id="@+id/tv_trend_gps" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="7-day: 0 accesses" android:textColor="@color/muted" android:textSize="10sp"
+                            android:fontFamily="monospace" android:layout_marginTop="2dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Background Activity Card -->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="16dp"
+                    android:background="@drawable/bg_card" android:layout_marginBottom="8dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="12dp">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:text="⚠ BACKGROUND SENSOR ACTIVITY"
+                            android:textColor="@color/critical" android:textSize="11sp" android:fontFamily="monospace"/>
+                    </LinearLayout>
+                    <TextView android:id="@+id/tv_no_bg"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="@string/no_bg" android:textColor="@color/low"
+                        android:textSize="12sp" android:fontFamily="monospace"
+                        android:gravity="center" android:padding="16dp" android:visibility="gone"/>
+                    <androidx.recyclerview.widget.RecyclerView android:id="@+id/rv_bg_apps"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- ═══════ APPS TAB ═══════ -->
+            <LinearLayout android:id="@+id/v_apps"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:visibility="gone">
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tab_filter"
+                    android:layout_width="match_parent" android:layout_height="40dp"
+                    android:layout_marginBottom="10dp"
+                    app:tabMode="scrollable" app:tabGravity="start"
+                    app:tabTextColor="@color/muted"
+                    app:tabSelectedTextColor="@color/green"
+                    app:tabIndicatorColor="@color/green"
+                    app:tabBackground="@color/bg"
+                    android:background="@color/bg"/>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="8dp">
+                    <TextView android:id="@+id/tv_stats"
+                        android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                        android:text="0 apps" android:textColor="@color/muted" android:textSize="11sp" android:fontFamily="monospace"/>
+                </LinearLayout>
+
+                <TextView android:id="@+id/tv_empty"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="@string/no_apps" android:textColor="@color/muted"
+                    android:textSize="13sp" android:fontFamily="monospace"
+                    android:gravity="center" android:padding="40dp" android:visibility="gone"/>
+
+                <androidx.recyclerview.widget.RecyclerView android:id="@+id/rv_apps"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"/>
+            </LinearLayout>
+
+            <!-- ═══════ LOGS TAB ═══════ -->
+            <LinearLayout android:id="@+id/v_logs"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:visibility="gone">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="12dp">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="SENSOR ACTIVITY LOG"
+                        android:textColor="@color/muted" android:textSize="11sp" android:fontFamily="monospace"/>
+                    <Button android:id="@+id/btn_clear_log"
+                        android:layout_width="wrap_content" android:layout_height="32dp"
+                        android:text="@string/clear_log"
+                        android:textColor="@color/muted" android:textSize="10sp"
+                        android:fontFamily="monospace"
+                        android:background="@drawable/bg_card"/>
+                </LinearLayout>
+
+                <TextView android:id="@+id/tv_no_logs"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="@string/no_logs" android:textColor="@color/muted"
+                    android:textSize="13sp" android:fontFamily="monospace"
+                    android:gravity="center" android:padding="40dp" android:visibility="gone"/>
+
+                <androidx.recyclerview.widget.RecyclerView android:id="@+id/rv_logs"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- ── BOTTOM NAV ── -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent" android:layout_height="60dp"
+        android:layout_gravity="bottom"
+        android:background="@color/card"
+        app:menu="@menu/bottom_nav"
+        app:itemTextColor="@color/muted"
+        app:itemIconTint="@color/muted"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

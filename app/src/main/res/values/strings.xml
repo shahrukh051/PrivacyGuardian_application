@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Privacy Guardian</string>
+    <string name="scan_now">SCAN NOW</string>
+    <string name="no_apps">No apps match this filter.</string>
+    <string name="no_bg">No background sensor activity detected.</string>
+    <string name="no_logs">No activity logged yet. Run a scan first.</string>
+    <string name="open_settings">Open App Settings</string>
+    <string name="clear_log">CLEAR LOG</string>
+    <string name="bg_active">\u26a0 Background Active</string>
+
+    <string name="label_cam">CAM</string>
+    <string name="label_mic">MIC</string>
+    <string name="label_gps">GPS</string>
+    <string name="label_contacts">CTCT</string>
+    <string name="label_storage">STRG</string>
+    <string name="category_time_format">%1$s  \u00b7  %2$s</string>
+    <string name="bg_indicator_bullet">\u25cf</string>
+
+    <!-- MainActivity -->
+    <string name="usage_access_title">Usage Access Required</string>
+    <string name="usage_access_msg">Privacy Guardian needs Usage Access permission to monitor background sensor activity.\n\nSettings \u2192 Apps \u2192 Special App Access \u2192 Usage Access \u2192 Enable Privacy Guardian.</string>
+    <string name="btn_skip">Skip</string>
+    <string name="tab_all">ALL</string>
+    <string name="tab_critical">CRITICAL</string>
+    <string name="tab_background">BACKGROUND</string>
+    <string name="tab_camera">CAMERA</string>
+    <string name="tab_mic">MIC</string>
+    <string name="stats_format">%d apps</string>
+    <string name="stats_scanned_format">%d apps scanned</string>
+    <string name="trend_format">7-day: %1$d accesses</string>
+    <string name="monitoring_msg">Monitoring sensor activity...</string>
+
+    <!-- AppDetailActivity -->
+    <string name="usage_week_format">%1$s  \u00b7  Usage this week: %2$d min</string>
+    <string name="risk_score_format">%1$d  \u2014  %2$s</string>
+    <string name="risk_desc_critical">CRITICAL: This app poses a serious privacy risk. Immediate action recommended.</string>
+    <string name="risk_desc_high">HIGH: Elevated risk. Review background access and consider restricting permissions.</string>
+    <string name="risk_desc_medium">MEDIUM: Moderate risk. Monitor this app\'s behavior over time.</string>
+    <string name="risk_desc_low">LOW: This app appears safe based on current permission usage.</string>
+
+    <string name="perm_camera">Camera</string>
+    <string name="perm_mic">Microphone</string>
+    <string name="perm_gps">GPS Location</string>
+    <string name="perm_contacts">Contacts</string>
+    <string name="perm_storage">Storage</string>
+
+    <string name="status_granted_bg">GRANTED  \u00b7  BG ACTIVE \u25cf</string>
+    <string name="status_granted">GRANTED</string>
+    <string name="status_not_granted">NOT GRANTED</string>
+
+    <string name="rec_mic_bg">\u26a0 REVOKE Microphone \u2014 active in background without your knowledge.</string>
+    <string name="rec_cam_bg">\u26a0 REVOKE Camera \u2014 woke up without user interaction.</string>
+    <string name="rec_gps_bg">\u26a0 RESTRICT Location to \"Only while using app\" \u2014 GPS tracked silently.</string>
+    <string name="rec_contacts_social">\u26a0 REVIEW Contacts access \u2014 social apps may harvest your contact list.</string>
+    <string name="rec_all_sensitive">\u26a0 This app has ALL sensitive permissions \u2014 reduce to what is strictly needed.</string>
+    <string name="rec_high_usage">\u2139 High usage this week (%1$d min) \u2014 check if permissions match your usage.</string>
+    <string name="rec_safe">\u2714 No immediate action required. Keep monitoring.</string>
+
+    <!-- Notifications -->
+    <string name="ch_alerts_name">Privacy Alerts</string>
+    <string name="ch_alerts_desc">Alerts when apps use sensors in background</string>
+    <string name="ch_service_name">Monitor Service</string>
+    <string name="ch_service_desc">Background monitoring service</string>
+    <string name="notif_title_pg_active">Privacy Guardian Active</string>
+    <string name="notif_sensor_alert_title">\u26a0 %1$s \u2014 Background Access</string>
+    <string name="notif_sensor_alert_body">%1$sactive in background! Risk: %2$d (%3$s)</string>
+    <string name="sensor_mic">Microphone </string>
+    <string name="sensor_cam">Camera </string>
+    <string name="sensor_gps">GPS </string>
+
+    <!-- Risk Labels -->
+    <string name="risk_critical">CRITICAL</string>
+    <string name="risk_high">HIGH</string>
+    <string name="risk_medium">MEDIUM</string>
+    <string name="risk_low">LOW</string>
+
+    <!-- Categories -->
+    <string name="cat_social">Social</string>
+    <string name="cat_entertainment">Entertainment</string>
+    <string name="cat_productivity">Productivity</string>
+    <string name="cat_navigation">Navigation</string>
+    <string name="cat_shopping">Shopping</string>
+    <string name="cat_browser">Browser</string>
+    <string name="cat_finance">Finance</string>
+    <string name="cat_app">App</string>
+</resources>

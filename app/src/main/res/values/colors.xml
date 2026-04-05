@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg">#FF060A14</color>
+    <color name="card">#FF0D1117</color>
+    <color name="card2">#FF0A0F1E</color>
+    <color name="green">#FF00FF88</color>
+    <color name="critical">#FFEF4444</color>
+    <color name="high">#FFF97316</color>
+    <color name="medium">#FFEAB308</color>
+    <color name="low">#FF22C55E</color>
+    <color name="text1">#FFE2E8F0</color>
+    <color name="text2">#FF94A3B8</color>
+    <color name="muted">#FF475569</color>
+    <color name="border">#FF1E293B</color>
+    <color name="cam">#FFF97316</color>
+    <color name="mic">#FFEF4444</color>
+    <color name="gps">#FFEAB308</color>
+    <color name="contacts">#FF8B5CF6</color>
+    <color name="storage">#FF06B6D4</color>
+</resources>
